@@ -36,14 +36,14 @@ namespace WindowsFormsApplication1
                 SqlDataAdapter sda1 = new SqlDataAdapter("Select type From Login where user_name ='" + textBox1.Text + "'and password ='" + textBox2.Text + "' ", con);
                 DataTable dt1 = new DataTable();
                 sda1.Fill(dt1);
-                    if (dt.Rows[0][0].ToString() == "Admin")
+                    if (dt1.Rows[0][0].ToString() == "Admin")
                     {
                         this.Hide();
                         Admin admin = new Admin();
                         admin.Show();
                     }
 
-                    if (dt.Rows[0][0].ToString() == "User")
+                    if (dt1.Rows[0][0].ToString() == "User")
                     {
                         this.Hide();
                         User user = new User();
